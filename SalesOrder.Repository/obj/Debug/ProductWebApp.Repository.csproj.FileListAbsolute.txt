@@ -1,0 +1,17 @@
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\ProductWebApp.Repository.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\ProductWebApp.Repository.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Dapper.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\ProductWebApp.Entities.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\ProductWebApp.Entities.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Dapper.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\obj\Debug\ProductWebApp.Repository.csproj.AssemblyReference.cache
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\obj\Debug\ProductWebApp.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\obj\Debug\ProductWebApp.Repository.csproj.CopyComplete
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\obj\Debug\ProductWebApp.Repository.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Repository\obj\Debug\ProductWebApp.Repository.pdb

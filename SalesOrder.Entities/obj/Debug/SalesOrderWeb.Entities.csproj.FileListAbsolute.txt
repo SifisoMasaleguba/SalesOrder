@@ -1,0 +1,15 @@
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Dapper.dll
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Dapper.xml
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.pdb
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\obj\Debug\SalesOrderWeb.Entities.csproj.AssemblyReference.cache
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\obj\Debug\SalesOrderWeb.Entities.csproj.CoreCompileInputs.cache
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\obj\Debug\SalesOrderWeb.Entities.csproj.CopyComplete
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\SalesOrderWeb.Entities.dll
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\bin\Debug\SalesOrderWeb.Entities.pdb
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\obj\Debug\SalesOrderWeb.Entities.dll
+C:\Source Controls\SalesOrder\SalesOrder\SalesOrder.Entities\obj\Debug\SalesOrderWeb.Entities.pdb

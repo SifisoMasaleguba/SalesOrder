@@ -1,0 +1,28 @@
+USE [TestDB]
+GO
+
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ORDERHEADER](
+	[OrderHeaderId] [int] IDENTITY(1,1) NOT NULL,
+	[OrderNumber] [varchar](100) NOT NULL,
+	[OrderType] [varchar](100) NOT NULL,
+	[OrderTypeId] [int] NOT NULL,
+	[OrderStatus] [varchar](100) NOT NULL,
+	[OrderStatusId] [int] NOT NULL,
+	[CustomerName] [varchar](250) NOT NULL,
+	[CreateDate] [datetime] NULL,
+	[isOrderHeaderDeleted] [bit] NULL,
+ CONSTRAINT [PK_OrderHeaderId] PRIMARY KEY CLUSTERED 
+(
+	[OrderHeaderId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[ORDERHEADER] ADD  CONSTRAINT [DF_ORDERHEADER_IS_DELETED]  DEFAULT ((0)) FOR [isOrderHeaderDeleted]
+GO

@@ -1,0 +1,15 @@
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\ProductWebApp.Entities.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\ProductWebApp.Entities.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Dapper.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Dapper.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.Bson.pdb
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\bin\Debug\Newtonsoft.Json.Bson.xml
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\obj\Debug\ProductWebApp.Entities.csproj.AssemblyReference.cache
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\obj\Debug\ProductWebApp.Entities.csproj.CoreCompileInputs.cache
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\obj\Debug\ProductWebApp.Entities.csproj.CopyComplete
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\obj\Debug\ProductWebApp.Entities.dll
+C:\Users\Sifiso.Masaleguba\Music\PlayingFolder\ProductWebApp\ProductWebApp.Entities\obj\Debug\ProductWebApp.Entities.pdb
