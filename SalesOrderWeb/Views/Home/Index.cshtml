@@ -64,8 +64,6 @@
                           <input class="form-control" placeholder="End Date" type="text" id="EndCreateDate" name="EndCreateDate" />
                       </div>
                       <div class="col-sm-4">
-                          <br />
-                          <input class="btn btn-primary" name="btnFilterOrderHeaderCreateDate" id="btnFilterOrderHeaderCreateDate" value="Filter" type="button">
                       </div>
                   </div>
               </div>
@@ -235,10 +233,15 @@
         $(function () {
             $('*[name=CreateDate]').appendDtpicker();           
         });
+        $(function () {
+            $("#StartCreateDate").datepicker();
+            $("#EndCreateDate").datepicker();
+        });
 
         $(document).ready(function () {
             LoadAllOrderHeaders();
-
+         
+     
 
             $("#btnFilterOrderHeaderCreateDate").on("click", function () {
                 debugger;
@@ -519,7 +522,25 @@
                         tr.addClass('shown');
                     }
                 });
-                $('#min, #max').on('change', function () {
+
+                $.fn.dataTable.ext.search.push(
+                    function (settings, data, dataIndex) {                        
+                        var FilterStart = $('#StartCreateDate').val();
+                        var FilterEnd = $('#EndCreateDate').val();
+                        var DataTableStart = data[4].trim();
+                        var DataTableEnd = data[5].trim();
+                        if (FilterStart == '' || FilterEnd == '') {
+                            return true;
+                        }
+                        if (DataTableStart >= FilterStart && DataTableEnd <= FilterEnd) {
+                            return true;
+                        }
+                        else {
+                            return false;
+                        }
+
+                    });
+                $('#EndCreateDate').change(function (e) {
                     orderHeaderTable.draw();
                 });
             }
