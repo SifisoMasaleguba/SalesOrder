@@ -122,7 +122,7 @@ namespace SalesOrderWeb.Controllers
 
 
         [Route("addorderline")]
-        public HttpResponseMessage AddComment([FromBody] OrderLine orderLine)
+        public HttpResponseMessage AddOrderLine([FromBody] OrderLine orderLine)
         {
             try
             {
@@ -154,14 +154,31 @@ namespace SalesOrderWeb.Controllers
             }
         }
 
+        [Route("editorderline")]
+        public HttpResponseMessage UpdateOrderLine([FromBody] OrderLine orderLine)
+        {
+            try
+            {
+                orderLineManager.UpdateOrderLine(orderLine);
+                return Request.CreateResponse(HttpStatusCode.OK, "Passed");
+            }
+            catch (Exception ex)
+            {
+                var message = string.Format("Error occured" + ex);
+                HttpError error = new HttpError(message);
+                var json = JsonConvert.SerializeObject(error, Formatting.Indented);
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, json);
+            }
+        }
 
+        [HttpPost]
         [Route("deleteorderline")]
         public HttpResponseMessage DeleteOrderLine([FromBody] OrderLine orderLine)
         {
             try
             {
                 orderLineManager.DeleteOrderLine(orderLine);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Request.CreateResponse(HttpStatusCode.OK, "Passed");
             }
             catch (Exception ex)
             {

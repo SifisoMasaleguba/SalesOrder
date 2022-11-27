@@ -39,7 +39,7 @@ namespace SalesOrderWeb.Repository
         {
             var parameters = new DynamicParameters();
             parameters.Add("@OrderLineId", orderderLine.OrderLineId);
-            dataSourceWeb.Connection().Execute("STP_ORDERHEADER_DELETE", parameters, commandType: CommandType.StoredProcedure);
+            dataSourceWeb.Connection().Execute("STP_ORDERLINE_DELETE", parameters, commandType: CommandType.StoredProcedure);
 
         }
 

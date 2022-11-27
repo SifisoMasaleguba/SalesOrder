@@ -156,7 +156,7 @@
     <div class="modal-dialog modal-lg" style="width:60%">
         <div class="modal-content">
             <div class="modal-header" style="text-align: center;">
-                <h2 class="modal-title capture-modal-title" id="modalHeading">Add Product OrderLine</h2>
+                <h2 class="modal-title capture-modal-title" id="modalHeading">Save Product OrderLine</h2>
             </div>
             <div class="modal-body">
                 <div class="row mt" style="border-bottom: 1px solid #e5e5e5; padding: 15px">
@@ -168,6 +168,7 @@
                                     <div class="col-sm-4"><label class="control-label">Line Number:</label></div>
                                     <div class="col-sm-8">
                                         <input class="form-control orderline-form" type="hidden" id="OrderLineOrderHeaderId" name="OrderHeaderId" />
+                                        <input class="form-control orderline-form" type="hidden" id="OrderLineId" name="OrderLineId" />
                                         <input class="form-control orderline-form" readonly type="text" id="LineNumber" name="LineNumber" />
                                     </div>
                                 </div>
@@ -215,10 +216,12 @@
                                 </div>
                             </div>
                             </div>
-                            <div class="col-lg-12" >
-                                <button type="button" class="btn btn-secondary" onclick='javascript: return $("#addOrderLineModal").modal("hide");'>Close</button>
-                                <button type="button" class="btn btn-success" id="btnAddOrderLine">Save Order Line</button>
-                            </div>
+                        <div class="col-lg-12">
+                            <button type="button" class="btn btn-secondary" onclick='javascript: return $("#addOrderLineModal").modal("hide");'>Close</button>
+                            <button type="button" class="btn btn-success" id="btnAddOrderLine">Save Order Line</button>
+                            <button type="button" style="display: none" class="btn btn-success" id="btnSaveChangesOrderLine">Save Order Line Changes</button>
+                            <button type="button" style="display: none"  class="btn btn-danger" id="btnDeleteOrderLine">Delete Order Line</button>
+                        </div>
                  </form>
                 </div>
             </div>
@@ -296,6 +299,29 @@
                 AddOrderLine(OrderLine);
             });
 
+            $("#btnSaveChangesOrderLine").on("click", function () {
+                let OrderLine = {};
+                OrderLine["ProductType"] = $("#ProductTypeId option:selected").text();
+                $(".orderline-form").each(function (index) {
+                    if ($(this).attr("name") !== undefined) {
+                        OrderLine[this.name] = $(this).val();
+                    }
+                });
+                EditOrderLine(OrderLine);
+            });
+            $("#btnDeleteOrderLine").on("click", function () {
+                let OrderLine = {};
+                debugger;
+                OrderLine["ProductType"] = $("#ProductTypeId option:selected").text();
+                $(".orderline-form").each(function (index) {
+                    if ($(this).attr("name") !== undefined) {
+                        OrderLine[this.name] = $(this).val();
+                    }
+                });
+                DeleteOrderLine(OrderLine);
+            });
+
+            
             
         });
 
@@ -424,7 +450,7 @@
                         for (let attribute in data) {                           
                             if ($(this).attr("name") !== undefined && $(this).attr("name") == attribute) {                                
                                 if ($(this).attr("name") == 'OrderTypeId' || $(this).attr("name") == 'OrderStatusId') {
-                                    debugger;
+                                    
                                     $(this).val(data[attribute]).change();
                                 } else {
                                     $(this).val(data[attribute]);
@@ -443,7 +469,7 @@
                         for (let attribute in data) {
                             if ($(this).attr("name") !== undefined && $(this).attr("name") == attribute) {
                                 if ($(this).attr("name") == 'OrderTypeId' || $(this).attr("name") == 'OrderStatusId') {
-                                    debugger;
+                                   
                                     $(this).val(data[attribute]).change();
                                 } else {
                                     $(this).val(data[attribute]);
@@ -471,8 +497,7 @@
                         error: function (req, status, error) {
                             console.log(req);
                         }
-                    })).done(function (orderLineList) {
-                        debugger;
+                    })).done(function (orderLineList) {                       
                         let countLineNumber = orderLineList.length + 1;                        
                         $("#LineNumber").val(countLineNumber);
                         $("#addOrderLineModal").modal('show');
@@ -512,9 +537,9 @@
                         console.log(req);
                     }
                 })).done(function (orderLineList) {
-                    debugger;
-                    let childTable = ''
-                    let childDataTable = undefined;
+                    
+                    var childTable = ''
+                    var childDataTable = undefined;
                     childTable = `<table  id="OrderLinesTable" class="display hover table table-striped table-bordered" style="width:100%">
                                     <thead>
                                     <tr>
@@ -546,8 +571,8 @@
                                 className: "dt-center",
                                 orderable: false,
                                 render: function (data) {
-                                    let editButton = `<button title="Edit order line" data-order-line-id=${data.OrderLineId} class="btn btn-success btn-xs edit-orderline">Edit</button>
-                                                      <button title="Delete order line" data-order-line-id=${data.OrderLineId} class="btn btn-danger btn-xs delete-line">Delete</button>`;
+                                    let editButton = `<button title="Edit order line" class="btn btn-success btn-xs edit-orderline">Edit</button>
+                                                      <button title="Delete order line" class="btn btn-danger btn-xs delete-orderline">Delete</button>`;
                                     return editButton;
 
                                 }
@@ -556,13 +581,91 @@
                     });
 
                     row.child(elem).show();
+                    $('#OrderLinesTable tbody').on('click', '.edit-orderline', function () {                       
+                        let data = childDataTable.row($(this).closest('tr')).data();
+                        $(".orderline-form").each(function (index) {
+                            for (let attribute in data) {
+                                if ($(this).attr("name") !== undefined && $(this).attr("name") == attribute) {
+                                    if ($(this).attr("name") == 'ProductTypeId' || $(this).attr("name") == 'ProductTypeId') {
+                                        $(this).val(data[attribute]).change();
+                                    } else {
+                                        $(this).val(data[attribute]);
+                                    }
+
+                                }
+
+                            }
+                        });
+
+                        $("#btnSaveChangesOrderLine").show();
+                        $("#btnDeleteOrderLine").hide();
+                        $("#btnAddOrderLine").hide();
+                        $("#addOrderLineModal").modal('show');
+                         
+                    });
+
+                    $('#OrderLinesTable tbody').on('click', '.delete-orderline', function () {
+                        let data = childDataTable.row($(this).closest('tr')).data();
+                        $(".orderline-form").each(function (index) {
+                            for (let attribute in data) {
+                                if ($(this).attr("name") !== undefined && $(this).attr("name") == attribute) {
+                                    if ($(this).attr("name") == 'ProductTypeId' || $(this).attr("name") == 'ProductTypeId') {
+                                        $(this).val(data[attribute]).change();
+                                    } else {
+                                        $(this).val(data[attribute]);
+                                    }
+                                    $(this).prop("readonly", true);
+                                }
+
+                            }
+                        });
+
+                        $("#btnSaveChangesOrderLine").hide();
+                        $("#btnDeleteOrderLine").show();
+                        $("#btnAddOrderLine").hide();
+                        $("#addOrderLineModal").modal('show');
+
+                    });
+
+
                 });
 
             }
 
 
         }
-
+        function EditOrderLine(OrderLine) {
+            $.ajax({
+                type: 'POST',
+                cache: true,
+                url: `api/v1/salesorders/editorderline`,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(OrderLine),
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (data) {
+                    console.log(data.responseText);
+                }
+            });
+        }
+        function DeleteOrderLine(OrderLine) {
+            $.ajax({
+                type: 'POST',
+                cache: true,
+                url: `api/v1/salesorders/deleteorderline`,
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify(OrderLine),
+                success: function (response) {
+                    location.reload();
+                },
+                error: function (data) {
+                    console.log(data.responseText);
+                }
+            });
+        }
 
 
     </script>
