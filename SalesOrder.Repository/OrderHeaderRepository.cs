@@ -30,8 +30,7 @@ namespace SalesOrderWeb.Repository
             parameters.Add("@CreateDate", orderHeader.CreateDate);
             parameters.Add("@OrderStatusId", orderHeader.OrderStatusId);
             parameters.Add("@OrderStatus", orderHeader.OrderStatus);
-            
-          
+        
             dataSourceWeb.Connection().Execute("STP_ORDERHEADER_ADD", parameters, commandType: CommandType.StoredProcedure);
             return orderHeader;
         }

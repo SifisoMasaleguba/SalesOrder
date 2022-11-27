@@ -54,9 +54,11 @@
     <Compile Include="DataSource\DataSourceWeb.cs" />
     <Compile Include="Interfaces\IOrderHeaderRepository.cs" />
     <Compile Include="Interfaces\IOrderLineRepository.cs" />
+    <Compile Include="Interfaces\IXmlService.cs" />
     <Compile Include="OrderHeaderRepository.cs" />
     <Compile Include="OrderLineRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XmlDBService\xmlService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SalesOrder.Entities\SalesOrderWeb.Entities.csproj">
