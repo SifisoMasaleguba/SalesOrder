@@ -13,7 +13,7 @@ DataBase folder contains script needed to create test database and all the store
 
 
 ### Solution structure
-Solution consist of three components : 1.  Mvc Web Applicationm following repository pattern                                 
+Solution consists of one component : 1.  Mvc Web Applicationm following repository pattern                                 
 
 ### Running the application
 We need the xml file in the temp folder
