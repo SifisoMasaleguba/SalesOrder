@@ -486,10 +486,11 @@
                 });
 
                 $('#OrderHeaderTable tbody').on('click', '.add-order-line', function () {
+                    
                     let orderHeaderId = orderHeaderTable.row($(this).closest('tr')).data().OrderHeaderId;
                     $("#OrderLineOrderHeaderId").val(orderHeaderId);
                     $.when($.ajax({
-                        url: `api/v1/salesorders/orderlinelist?orderHeaderId=${data.OrderHeaderId}`,
+                        url: `api/v1/salesorders/orderlinelist?orderHeaderId=${orderHeaderId}`,
                         type: "GET",
                         cache: false,
                         success: function (orderLineList) {                           
